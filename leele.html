@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Video</title>
+</head>
+<body>
+
+    <video width="640" height="360" controls id="videoPlayer">
+        <source src="seuvideo.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <script>
+        var videoPlayer = document.getElementById('videoPlayer');
+
+        // Adiciona um ouvinte de evento para clicar no vídeo
+        videoPlayer.addEventListener('click', function() {
+            if (videoPlayer.requestFullscreen) {
+                videoPlayer.requestFullscreen();
+            } else if (videoPlayer.mozRequestFullScreen) {
+                videoPlayer.mozRequestFullScreen();
+            } else if (videoPlayer.webkitRequestFullscreen) {
+                videoPlayer.webkitRequestFullscreen();
+            } else if (videoPlayer.msRequestFullscreen) {
+                videoPlayer.msRequestFullscreen();
+            }
+        });
+    </script>
+
+</body>
+</html>
